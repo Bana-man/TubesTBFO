@@ -1,27 +1,27 @@
 
 #Bagian ini dipakai sampai ngebaca sebelum fungsi transisi
-PDA = open("PDA.txt")
-STATE = ((PDA.readline()).rstrip()).split()
-INPUT_SIMBOL = ((PDA.readline()).rstrip()).split()
-START_STATE = ((PDA.readline()).rstrip()).split()
-START_STACK = ((PDA.readline()).rstrip()).split()
-ACCEPTING_STACK = ((PDA.readline()).rstrip()).split()
-ACCEPTING_STATE =  ((PDA.readline()).rstrip()).split()
-KONDISI = ((PDA.readline()).rstrip()).split()
-PDA.close()
+pda = open("PDA.txt")
+state = ((pda.readline()).rstrip()).split()
+input_simbol = ((pda.readline()).rstrip()).split()
+start_state = ((pda.readline()).rstrip()).split()
+start_stack = ((pda.readline()).rstrip()).split()
+accepting_stack = ((pda.readline()).rstrip()).split()
+accepting_state =  ((pda.readline()).rstrip()).split()
+kondisi = ((pda.readline()).rstrip()).split()
+pda.close()
 
 
 #Bagian ini buat ngebaca fungsi transisi
-PDA = open("PDA.txt")
-TEMP = PDA.readlines()
-PDA.close()
+pda = open("PDA.txt")
+temp = pda.readlines()
+pda.close()
 
 count = 0
-TRANSITION_FUNCTION = []
-panjang_baris = len(TEMP)
+transition_function = []
+panjang_baris = len(temp)
 for i in range( panjang_baris):
     if i >= 7:        
-        TRANSITION_FUNCTION.append(TEMP[i].rstrip().split())
+        transition_function.append(temp[i].rstrip().split())
 
 
 #fungsi bantuan buat dapet currentstate
@@ -44,7 +44,7 @@ def nextState(fungsi_transisi):
 def addToState(fungsi_transisi):
     return fungsi_transisi[4]
 
-panjang_baris = len(TRANSITION_FUNCTION)
+panjang_baris = len(transition_function)
 
 
 #for i in range(panjang_baris):
@@ -55,16 +55,16 @@ panjang_baris = len(TRANSITION_FUNCTION)
 
 
     
-"""
-print(STATE)
-print(INPUT_SIMBOL)
-print(START_STATE)
-print(START_STACK)
-print(ACCEPTING_STACK)
-print(ACCEPTING_STATE)
-print(KONDISI)
-print(TRANSITION_FUNCTION)
-"""
+
+print(state)
+print(input_simbol)
+print(start_state)
+print(start_state)
+print(accepting_stack)
+print(accepting_state)
+print(kondisi)
+print(transition_function)
+
 
 
 
