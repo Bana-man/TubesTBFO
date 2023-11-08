@@ -1,4 +1,7 @@
 
+from tasukete import *
+
+
 #Bagian ini dipakai sampai ngebaca sebelum fungsi transisi
 pda = open("PDA.txt")
 state = ((pda.readline()).rstrip()).split()
@@ -24,27 +27,7 @@ for i in range( panjang_baris):
         transition_function.append(temp[i].rstrip().split())
 
 
-#fungsi bantuan buat dapet currentstate
-def currentState(fungsi_transisi):
-    return fungsi_transisi[0]
-
-#fungsi bantuan buat dapet  info inputan
-def alphabetInput(fungsi_transisi):
-    return fungsi_transisi[1]
-
-#fungsi bantuan buat dapet  info isi stack paling atas
-def topFromStack(fungsi_transisi):
-    return fungsi_transisi[2]
-
-#fungsi bantuan buat dapet  info nextState
-def nextState(fungsi_transisi):
-    return fungsi_transisi[3]
-
-#fungsi bantuan buat dapet  info yang harus di Add to Stack
-def addToState(fungsi_transisi):
-    return fungsi_transisi[4]
-
-panjang_baris = len(transition_function)
+#panjang_baris = len(transition_function)
 
 
 #for i in range(panjang_baris):
@@ -52,10 +35,8 @@ panjang_baris = len(transition_function)
 
 #print(TRANSITION_FUNCTION)
 
-
-
     
-
+"""
 print(state)
 print(input_simbol)
 print(start_state)
@@ -64,7 +45,7 @@ print(accepting_stack)
 print(accepting_state)
 print(kondisi)
 print(transition_function)
-
+"""
 
 
 
