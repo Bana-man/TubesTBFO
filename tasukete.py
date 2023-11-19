@@ -25,3 +25,6 @@ def listToString(list):
         listResult += elemen
     
     return listResult
+
+#Update kondisi Acceptance
+#def updateAcceptance(file, kondisi):
