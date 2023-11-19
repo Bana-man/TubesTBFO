@@ -222,9 +222,9 @@ BODY /input <input> BODY e
 
 BODY table <body> BODY <table><body>
 BODY tr <table> BODY <tr><table>
-BODY /tr <tr> BODY e
-BODY td <table> BODY <td><table>
+BODY td <tr> BODY <td><tr>
 BODY /td <td> BODY e
-BODY th <table> BODY <th><table>
+BODY th <tr> BODY <th><tr>
 BODY /th <th> BODY e
+BODY /tr <tr> BODY e
 BODY /table <table> BODY e
