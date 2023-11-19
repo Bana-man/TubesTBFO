@@ -10,9 +10,9 @@ from tasukete import *
 pda = open("PDA.txt")
 state = ((pda.readline()).rstrip()).split()
 input_simbol = ((pda.readline()).rstrip()).split()
+stack_simbol = ((pda.readline()).rstrip()).split()
 start_state = ((pda.readline()).rstrip()).split()
 start_stack = ((pda.readline()).rstrip()).split()
-accepting_stack = ((pda.readline()).rstrip()).split()
 accepting_state =  ((pda.readline()).rstrip()).split()
 kondisi = ((pda.readline()).rstrip()).split()
 pda.close()
@@ -32,11 +32,72 @@ for i in range( panjang_baris):
 
 
 
+isiHTML = ['html', 'head', 'img', 'src', '/', 'title', '/title', '/head','body','/body', '/html']
+#print(transition_function)
+
+state = start_state
+stack = start_stack
+accepting = accepting_state
+
+# print(currentState)
+# print(currentStack)
+# print(accepting)
+
+# print(stack)
+
+# print(parsingStack("e"))
+
+# flag = False
+
+#print(parsingStack("tes"))
+
+# print(listToString(state))
+# print(stack)
+# print(accepting)
+
+
+for masukkan in isiHTML:
+    flag = False
+    for transisi in transition_function:
+        #print(transisi)
+        if (listToString(state) == currentState(transisi) and stack[-1] == topFromStack(transisi) and masukkan == alphabetInput(transisi)):
+            state = nextState(transisi)
+            elemen = parsingStack(addToStack(transisi))
+            if (elemen == 'e'): 
+                stack.pop()
+            elif (elemen != stack[-1]):
+                stack.append(elemen)
+            flag = True
+    print(stack)
+    if (flag == False):
+        exit("Syntax Error")
+
+for i in accepting_state:
+    if (state == i):
+        exit("Berhasil")
+           
+exit("Syntax Error")
+
+            
+
+
+            
+
+            
+
+
+
+        
+    
 
 
 
 
-#panjang_baris = len(transition_function)
+
+
+
+
+#pantransisiang_baris = len(transition_function)
 
 #for i in range(panjang_baris):
 #    print(addToState(TRANSITION_FUNCTION[i]))

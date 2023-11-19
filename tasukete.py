@@ -15,7 +15,7 @@ def nextState(fungsi_transisi):
     return fungsi_transisi[3]
 
 #fungsi bantuan buat dapet  info yang harus di Add to Stack
-def addToState(fungsi_transisi):
+def addToStack(fungsi_transisi):
     return fungsi_transisi[4]
 
 #list ke string
@@ -25,6 +25,18 @@ def listToString(list):
         listResult += elemen
     
     return listResult
+
+#def parsting isi teks
+def parsingStack(list):
+    hasil = ""
+    for elemen in list:
+        hasil += elemen
+        if elemen == ">":
+            break
+    return hasil
+
+
+
 
 #Update kondisi Acceptance
 #def updateAcceptance(file, kondisi):
