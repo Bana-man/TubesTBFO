@@ -1,3 +1,11 @@
+START HTML HEAD XHEAD BODY XBODY HXREL BXREL XSRC TYPE METHOD FINAL
+html /html $ id class style / head /head body /body title /title link href script src h1 /h1 h2 /h2 h3 /h3 h4 /h4 h5 /h5 h6 /h6 p /p br em /em b /b abbr /abbr strong /strong small /small hr div /div a /a img alt button submit reset /button form action method get post /form input text password email number checkbox table /table tr /tr td /td th /th
+Z0 <html> <head> <body> <title> <link> <script> <h1> <h2> <h3> <h4> <h5> <h6> <p> <br> <em> <b> <abbr> <strong> <small> <hr> <div> <a> <img> <button> <form> <input> <table> <tr> <td> <th>
+START
+Z0
+FINAL
+F
+
 START html Z0 HTML <html>Z0
 HTML id <html> HTML <html>
 HTML class <html> HTML <html>
@@ -43,7 +51,7 @@ BXREL style <link> BXREL <link>
 BXREL rel <link> BODY <link>
 BODY href <link> BODY <link>
 BODY id <link> BODY <link>
-BODY class <link> BODY <link>
+BODY class <link> BODY <link>S
 BODY style <link> BODY <link>
 BODY / <link> BODY e
 
@@ -218,7 +226,7 @@ TYPE checkbox <input> BODY <input>
 BODY id <input> BODY <input>
 BODY class <input> BODY <input>
 BODY style <input> BODY <input>
-BODY /input <input> BODY e
+BODY / <input> BODY e
 
 BODY table <body> BODY <table><body>
 BODY tr <table> BODY <tr><table>
