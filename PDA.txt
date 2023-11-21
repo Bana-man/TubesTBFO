@@ -176,6 +176,24 @@ BODY style="" <br> BODY <br>
 BODY / <br> BODY e
 
 BODY em <body> BODY <em><body>
+BODY em <title> BODY <em><title>
+BODY em <script> BODY <em><script>
+BODY em <h1> BODY <em><h1>
+BODY em <h2> BODY <em><h2>
+BODY em <h3> BODY <em><h3>
+BODY em <h4> BODY <em><h4>
+BODY em <h5> BODY <em><h5>
+BODY em <h6> BODY <em><h6>
+BODY em <p> BODY <em><p>
+BODY em <abbr> BODY <em><abbr>
+BODY em <a> BODY <em><a>
+BODY em <button> BODY <em><button>
+BODY em <form> BODY <em><form>
+BODY em <table> BODY <em><table>
+BODY em <tr> BODY <em><tr>
+BODY em <td> BODY <em><td>
+BODY em <th> BODY <em><th>
+BODY em <div> BODY <em><div>
 BODY id="" <em> BODY <em>
 BODY class="" <em> BODY <em>
 BODY style="" <em> BODY <em>
@@ -186,6 +204,24 @@ BODY $ <em> BODY <em>
 BODY /em <em> BODY e
 
 BODY b <body> BODY <b><body>
+BODY b <title> BODY <b><title>
+BODY b <script> BODY <b><script>
+BODY b <h1> BODY <b><h1>
+BODY b <h2> BODY <b><h2>
+BODY b <h3> BODY <b><h3>
+BODY b <h4> BODY <b><h4>
+BODY b <h5> BODY <b><h5>
+BODY b <h6> BODY <b><h6>
+BODY b <p> BODY <b><p>
+BODY b <abbr> BODY <b><abbr>
+BODY b <a> BODY <b><a>
+BODY b <button> BODY <b><button>
+BODY b <form> BODY <b><form>
+BODY b <table> BODY <b><table>
+BODY b <tr> BODY <b><tr>
+BODY b <td> BODY <b><td>
+BODY b <th> BODY <b><th>
+BODY b <div> BODY <b><div>
 BODY id="" <b> BODY <b>
 BODY class="" <b> BODY <b>
 BODY style="" <b> BODY <b>
@@ -206,6 +242,24 @@ BODY $ <abbr> BODY <abbr>
 BODY /abbr <abbr> BODY e
 
 BODY strong <body> BODY <strong><body>
+BODY strong <title> BODY <strong><title>
+BODY strong <script> BODY <strong><script>
+BODY strong <h1> BODY <strong><h1>
+BODY strong <h2> BODY <strong><h2>
+BODY strong <h3> BODY <strong><h3>
+BODY strong <h4> BODY <strong><h4>
+BODY strong <h5> BODY <strong><h5>
+BODY strong <h6> BODY <strong><h6>
+BODY strong <p> BODY <strong><p>
+BODY strong <abbr> BODY <strong><abbr>
+BODY strong <a> BODY <strong><a>
+BODY strong <button> BODY <strong><button>
+BODY strong <form> BODY <strong><form>
+BODY strong <table> BODY <strong><table>
+BODY strong <tr> BODY <strong><tr>
+BODY strong <td> BODY <strong><td>
+BODY strong <th> BODY <strong><th>
+BODY strong <div> BODY <strong><div>
 BODY id="" <strong> BODY <strong>
 BODY class="" <strong> BODY <strong>
 BODY style="" <strong> BODY <strong>
@@ -216,6 +270,24 @@ BODY $ <strong> BODY <strong>
 BODY /strong <strong> BODY e
 
 BODY small <body> BODY <small><body>
+BODY small <title> BODY <small><title>
+BODY small <script> BODY <small><script>
+BODY small <h1> BODY <small><h1>
+BODY small <h2> BODY <small><h2>
+BODY small <h3> BODY <small><h3>
+BODY small <h4> BODY <small><h4>
+BODY small <h5> BODY <small><h5>
+BODY small <h6> BODY <small><h6>
+BODY small <p> BODY <small><p>
+BODY small <abbr> BODY <small><abbr>
+BODY small <a> BODY <small><a>
+BODY small <button> BODY <small><button>
+BODY small <form> BODY <small><form>
+BODY small <table> BODY <small><table>
+BODY small <tr> BODY <small><tr>
+BODY small <td> BODY <small><td>
+BODY small <th> BODY <small><th>
+BODY small <div> BODY <small><div>
 BODY id="" <small> BODY <small>
 BODY class="" <small> BODY <small>
 BODY style="" <small> BODY <small>
@@ -238,6 +310,7 @@ BODY style="" <div> BODY <div>
 BODY !-- <div> BODY <comment><div>
 BODY $ <comment> BODY <comment>
 BODY -- <comment> BODY e
+BODY $ <div> BODY <div>
 BODY /div <div> BODY e
 
 BODY a <body> BODY <a><body>
@@ -261,7 +334,6 @@ BODY alt="" <img> BODY <img>
 BODY id="" <img> BODY <img>
 BODY class="" <img> BODY <img>
 BODY style="" <img> BODY <img>
-BODY $ <img> BODY <img>
 BODY / <img> BODY e
 
 BODY button <body> BODY <button><body>
