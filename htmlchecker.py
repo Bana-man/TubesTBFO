@@ -14,7 +14,9 @@ tag_container = []
 line_count = 0
 
 # READ FILE HTML
-with open("index.html") as read_html:
+file_html = input("Enter the name of the HTML file: ")
+
+with open(file_html) as read_html:
     for line in read_html:
         word = line.strip()
         end_index = -1
@@ -25,25 +27,41 @@ with open("index.html") as read_html:
                 start_index = i
                 if end_index != -1:
                     if word[end_index + 1:start_index] != "":
-                        tag_container.append("$")
+                        tag_container.append(">")
+                    tag_container.append("$")
 
             if word[i] == ">":
                 end_index = i
-                tag_content = word[start_index + 1:end_index]
+                tag_content = word[start_index:end_index + 1]
 
                 # Process the tag content
-                if tag_content.startswith("/"):
+                if tag_content.startswith("<!--"):
+                    # Handle comments
+                    tag_container.append("<!--")
+                    tag_container.append("$")
+                    tag_container.append("-->")
+                elif tag_content.startswith("/"):
                     # Handle closing tags
-                    tag_container.append("/" + tag_content[1:])
+                    tag_container.append(tag_content[1:])
                 else:
                     # Handle opening tags
                     tag_container.append(tag_content)
+
+                    # Process attributes
                     if " " in tag_content:
-                        # If the tag has attributes, split them correctly
                         attributes = tag_content.split(" ", 1)[1]
-                        tag_container.extend(attributes.split(' '))
+                        attributes_list = attributes.split()
+
+                        for i, attr in enumerate(attributes_list):
+                            if "=" in attr:
+                                attr_name, attr_value = attr.split("=", 1)
+                                if attr_name.lower() != "method" and '"' in attr_value:
+                                    attr_value = '""'
+                                attributes_list[i] = f"{attr_name}={attr_value}"
+
+                        tag_container.extend(attributes_list)
 
 print("Tag container:")
 print(tag_container)
-print("Line count:", line_count)
-['html', 'head', 'title', '$', '/title', 'link', 'rel="stylesheet"', 'href=""', '/', 'script', 'src="#src"', '/script', '/head', 'body', 'em', '$', '/em', 'hr /', '/', 'strong', 'p', '$', '/p', 'p', '$', '/p', 'b', 'p', '$', '/p', 'p', '$', '/p', '/b', '/strong', 'h1', 'abbr', 'title="inijudul"', '$', '/abbr', '/h1', 'h2', 'p', '/p', '/h2', 'h3', 'p', '/p', '/h3', 'h4', 'p', '/p', '/h4', 'h5', 'p', '/p', '/h5', 'h6', 'p', '/p', '/h6', 'p', '/p', '/body', '/html']
+
+# EXPECTED OUTPUT: ['<html>', '<head>', '<!--', '$', '-->', '<title>', '>', '$', '</title>', '<link', 'rel=""', 'href=""', '/>', '<script>', 'src=""', '$', '</script>', '</head>', '<body>', '<em>', '$', '</em>', '<hr />', '<strong>', '<p>', '$', '</p>', '<p>', '$', '</p>', '<b>', '<p>', '$', '</p>', '<p>',  '$', '</p>', '</b>', '</strong>', '<h1>', '<abbr>', 'title=""', '$', '</abbr>', '</h1>', '<h2>', '<p>', '$', '</p>', '</h2>', '<h3>', '<p>', '$', '</p>', '</h3>', '<h4>', '<p>', '$', '</p>', '</h4>', '<h5>', '<p>', '$', '</p>', '</h5>', '<h6>', '<p>', '$', '</p>', '</h6>', '<p>', '$', '</p>', '</body>', '</html>']
