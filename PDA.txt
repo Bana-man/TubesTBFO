@@ -6,28 +6,50 @@ Z0
 FINAL
 F
 
+START !-- Z0 START <comment>Z0
+START $ <comment> START <comment>
+START -- <comment> START e
 START html Z0 HTML <html>Z0
 HTML id <html> HTML <html>
 HTML class <html> HTML <html>
 HTML style <html> HTML <html>
+HTML !-- <html> HTML <comment><html>
+HTML $ <comment> HTML <comment>
+HTML -- <comment> HTML e
 XBODY /html <html> FINAL e
 
 HTML head <html> HEAD <head><html>
 HEAD id <head> HEAD <head>
 HEAD class <head> HEAD <head>
 HEAD style <head> HEAD <head>
+HEAD !-- <head> HEAD <comment><head>
+HEAD $ <comment> HEAD <comment>
+HEAD -- <comment> HEAD e
 HEAD /head <head> XHEAD e
+XHEAD !-- <html> XHEAD <comment><html>
+XHEAD $ <comment> XHEAD <comment>
+XHEAD -- <comment> XHEAD e
 
 XHEAD body <html> BODY <body><html>
 BODY id <body> BODY <body>
 BODY class <body> BODY <body>
 BODY style <body> BODY <body>
+BODY $ <body> BODY <body>
+BODY !-- <body> BODY <comment><body>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY /body <body> XBODY e
+XBODY !-- Z0 XBODY <comment>Z0
+XBODY $ <comment> XBODY <comment>
+XBODY -- <comment> XBODY e
 
 HEAD title <head> HEAD <title><head>
 HEAD id <title> HEAD <title>
 HEAD class <title> HEAD <title>
 HEAD style <title> HEAD <title>
+HEAD !-- <title> HEAD <comment><title>
+HEAD $ <comment> HEAD <comment>
+HEAD -- <comment> HEAD e
 HEAD $ <title> HEAD <title>
 HEAD /title <title> HEAD e
 
@@ -51,7 +73,7 @@ BXREL style <link> BXREL <link>
 BXREL rel <link> BODY <link>
 BODY href <link> BODY <link>
 BODY id <link> BODY <link>
-BODY class <link> BODY <link>S
+BODY class <link> BODY <link>
 BODY style <link> BODY <link>
 BODY / <link> BODY e
 
@@ -60,6 +82,9 @@ HEAD src <script> HEAD <script>
 HEAD id <script> HEAD <script>
 HEAD class <script> HEAD <script>
 HEAD style <script> HEAD <script>
+HEAD !-- <script> HEAD <comment><script>
+HEAD $ <comment> HEAD <comment>
+HEAD -- <comment> HEAD e
 HEAD $ <script> HEAD <script>
 HEAD /script <script> HEAD e
 
@@ -68,6 +93,9 @@ BODY src <script> BODY <script>
 BODY id <script> BODY <script>
 BODY class <script> BODY <script>
 BODY style <script> BODY <script>
+BODY !-- <script> BODY <comment><script>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <script> BODY <script>
 BODY /script <script> BODY e
 
@@ -75,6 +103,9 @@ BODY h1 <body> BODY <h1><body>
 BODY id <h1> BODY <h1>
 BODY class <h1> BODY <h1>
 BODY style <h1> BODY <h1>
+BODY !-- <h1> BODY <comment><h1>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <h1> BODY <h1>
 BODY /h1 <h1> BODY e
 
@@ -82,6 +113,9 @@ BODY h2 <body> BODY <h2><body>
 BODY id <h2> BODY <h2>
 BODY class <h2> BODY <h2>
 BODY style <h2> BODY <h2>
+BODY !-- <h2> BODY <comment><h2>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <h2> BODY <h2>
 BODY /h2 <h2> BODY e
 
@@ -89,6 +123,9 @@ BODY h3 <body> BODY <h3><body>
 BODY id <h3> BODY <h3>
 BODY class <h3> BODY <h3>
 BODY style <h3> BODY <h3>
+BODY !-- <h3> BODY <comment><h3>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <h3> BODY <h3>
 BODY /h3 <h3> BODY e
 
@@ -96,6 +133,9 @@ BODY h4 <body> BODY <h4><body>
 BODY id <h4> BODY <h4>
 BODY class <h4> BODY <h4>
 BODY style <h4> BODY <h4>
+BODY !-- <h4> BODY <comment><h4>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <h4> BODY <h4>
 BODY /h4 <h4> BODY e
 
@@ -103,6 +143,9 @@ BODY h5 <body> BODY <h5><body>
 BODY id <h5> BODY <h5>
 BODY class <h5> BODY <h5>
 BODY style <h5> BODY <h5>
+BODY !-- <h5> BODY <comment><h5>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <h5> BODY <h5>
 BODY /h5 <h5> BODY e
 
@@ -110,6 +153,9 @@ BODY h6 <body> BODY <h6><body>
 BODY id <h6> BODY <h6>
 BODY class <h6> BODY <h6>
 BODY style <h6> BODY <h6>
+BODY !-- <h6> BODY <comment><h6>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <h6> BODY <h6>
 BODY /h6 <h6> BODY e
 
@@ -117,6 +163,9 @@ BODY p <body> BODY <p><body>
 BODY id <p> BODY <p>
 BODY class <p> BODY <p>
 BODY style <p> BODY <p>
+BODY !-- <p> BODY <comment><p>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <p> BODY <p>
 BODY /p <p> BODY e
 
@@ -130,6 +179,9 @@ BODY em <body> BODY <em><body>
 BODY id <em> BODY <em>
 BODY class <em> BODY <em>
 BODY style <em> BODY <em>
+BODY !-- <em> BODY <comment><em>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <em> BODY <em>
 BODY /em <em> BODY e
 
@@ -137,6 +189,9 @@ BODY b <body> BODY <b><body>
 BODY id <b> BODY <b>
 BODY class <b> BODY <b>
 BODY style <b> BODY <b>
+BODY !-- <b> BODY <comment><b>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <b> BODY <b>
 BODY /b <b> BODY e
 
@@ -144,6 +199,9 @@ BODY abbr <body> BODY <abbr><body>
 BODY id <abbr> BODY <abbr>
 BODY class <abbr> BODY <abbr>
 BODY style <abbr> BODY <abbr>
+BODY !-- <abbr> BODY <comment><abbr>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <abbr> BODY <abbr>
 BODY /abbr <abbr> BODY e
 
@@ -151,6 +209,9 @@ BODY strong <body> BODY <strong><body>
 BODY id <strong> BODY <strong>
 BODY class <strong> BODY <strong>
 BODY style <strong> BODY <strong>
+BODY !-- <strong> BODY <comment><strong>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <strong> BODY <strong>
 BODY /strong <strong> BODY e
 
@@ -158,6 +219,9 @@ BODY small <body> BODY <small><body>
 BODY id <small> BODY <small>
 BODY class <small> BODY <small>
 BODY style <small> BODY <small>
+BODY !-- <small> BODY <comment><small>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <small> BODY <small>
 BODY /small <small> BODY e
 
@@ -171,6 +235,9 @@ BODY div <body> BODY <div><body>
 BODY id <div> BODY <div>
 BODY class <div> BODY <div>
 BODY style <div> BODY <div>
+BODY !-- <div> BODY <comment><div>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY /div <div> BODY e
 
 BODY a <body> BODY <a><body>
@@ -178,6 +245,9 @@ BODY id <a> BODY <a>
 BODY class <a> BODY <a>
 BODY style <a> BODY <a>
 BODY href <a> BODY <a>
+BODY !-- <a> BODY <comment><a>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <a> BODY <a>
 BODY /a <a> BODY e
 
@@ -202,6 +272,9 @@ TYPE button <button> BODY <button>
 BODY id <button> BODY <button>
 BODY class <button> BODY <button>
 BODY style <button> BODY <button>
+BODY !-- <button> BODY <comment><button>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <button> BODY <button>
 BODY /button <button> BODY e
 
@@ -213,6 +286,9 @@ METHOD post <form> BODY <form>
 BODY id <form> BODY <form>
 BODY class <form> BODY <form>
 BODY style <form> BODY <form>
+BODY !-- <form> BODY <comment><form>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
 BODY $ <form> BODY <form>
 BODY /form <form> BODY e
 
@@ -229,10 +305,43 @@ BODY style <input> BODY <input>
 BODY / <input> BODY e
 
 BODY table <body> BODY <table><body>
+BODY id <table> BODY <table>
+BODY class <table> BODY <table>
+BODY style <table> BODY <table>
+BODY !-- <table> BODY <comment><table>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
+BODY $ <table> BODY <table>
+
 BODY tr <table> BODY <tr><table>
+BODY id <tr> BODY <tr>
+BODY class <tr> BODY <tr>
+BODY style <tr> BODY <tr>
+BODY !-- <tr> BODY <comment><tr>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
+BODY $ <tr> BODY <tr>
+
 BODY td <tr> BODY <td><tr>
+BODY id <td> BODY <td>
+BODY class <td> BODY <td>
+BODY style <td> BODY <td>
+BODY !-- <td> BODY <comment><td>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
+BODY $ <td> BODY <td>
 BODY /td <td> BODY e
+
 BODY th <tr> BODY <th><tr>
+BODY id <th> BODY <th>
+BODY class <th> BODY <th>
+BODY style <th> BODY <th>
+BODY !-- <th> BODY <comment><th>
+BODY $ <comment> BODY <comment>
+BODY -- <comment> BODY e
+BODY $ <th> BODY <th>
 BODY /th <th> BODY e
+
 BODY /tr <tr> BODY e
+
 BODY /table <table> BODY e
