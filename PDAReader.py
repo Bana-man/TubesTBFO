@@ -93,7 +93,7 @@ for masukkan in isiHTML:
 
 for i in accepting_state:
     if (state == i):
-        exit("Berhasil")
+        exit("Accepted")
            
 exit("Syntax Error")
 
