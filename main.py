@@ -47,6 +47,7 @@ def check_tag(file_html):
                         tag_name = tag_content.split()[0]
                         tag_container.append(tag_name)
 
+                        attributes_list = []
                         # Process attributes
                         if " " in tag_content:
                             attributes = tag_content.split(" ", 1)[1]
@@ -91,31 +92,31 @@ def check_tag(file_html):
 
 if len(sys.argv) >= 2:
     input_file = sys.argv[2]
-    print(input_file)
+    #print(input_file)
     # print("Nama file input:", input_file)
 
-    # pda = open("PDA.txt")
-    # state = ((pda.readline()).rstrip()).split()
-    # input_simbol = ((pda.readline()).rstrip()).split()
-    # stack_simbol = ((pda.readline()).rstrip()).split()
-    # start_state = ((pda.readline()).rstrip()).split()
-    # start_stack = ((pda.readline()).rstrip()).split()
-    # accepting_state =  ((pda.readline()).rstrip()).split()
-    # kondisi = ((pda.readline()).rstrip()).split()
-    # pda.close()
+    pda = open("PDA.txt")
+    state = ((pda.readline()).rstrip()).split()
+    input_simbol = ((pda.readline()).rstrip()).split()
+    stack_simbol = ((pda.readline()).rstrip()).split()
+    start_state = ((pda.readline()).rstrip()).split()
+    start_stack = ((pda.readline()).rstrip()).split()
+    accepting_state =  ((pda.readline()).rstrip()).split()
+    kondisi = ((pda.readline()).rstrip()).split()
+    pda.close()
 
 
-    # #Bagian ini buat ngebaca fungsi transisi
-    # pda = open("PDA.txt")
-    # temp = pda.readlines()
-    # pda.close()
+    #Bagian ini buat ngebaca fungsi transisi
+    pda = open("PDA.txt")
+    temp = pda.readlines()
+    pda.close()
 
-    # count = 0
-    # transition_function = []
-    # panjang_baris = len(temp)
-    # for i in range( panjang_baris):
-    #     if i >= 7:        
-    #         transition_function.append(temp[i].rstrip().split())
+    count = 0
+    transition_function = []
+    panjang_baris = len(temp)
+    for i in range( panjang_baris):
+        if i >= 7:        
+            transition_function.append(temp[i].rstrip().split())
 
 
 
@@ -123,38 +124,38 @@ if len(sys.argv) >= 2:
     print(isiHTML)
 
 
-    # state = start_state
-    # stack = start_stack
-    # accepting = accepting_state
+    state = start_state
+    stack = start_stack
+    accepting = accepting_state
 
 
-    # for masukkan in isiHTML:
-    #     flag = False
-    #     for transisi in transition_function:
-    #         #print(transisi)
-    #         if (listToString(state) == currentState(transisi) and stack[-1] == topFromStack(transisi) and masukkan == alphabetInput(transisi)):
-    #             state = nextState(transisi)
-    #             elemen = parsingStack(addToStack(transisi))
-    #             # print(transisi)
-    #             # print(elemen)
-    #             #print(elemen)
-    #             if (elemen[1] != ''):
-    #                     stack.append(elemen[0])
-    #                     # print("ini stack",stack)
-    #             elif (elemen[1] == ''):
-    #                     if (elemen[0] == 'e'): 
-    #                         stack.pop()
-    #                         # print("ini stack",stack)
+    for masukkan in isiHTML:
+        flag = False
+        for transisi in transition_function:
+            #print(transisi)
+            if (listToString(state) == currentState(transisi) and stack[-1] == topFromStack(transisi) and masukkan == alphabetInput(transisi)):
+                state = nextState(transisi)
+                elemen = parsingStack(addToStack(transisi))
+                # print(transisi)
+                # print(elemen)
+                #print(elemen)
+                if (elemen[1] != ''):
+                        stack.append(elemen[0])
+                        # print("ini stack",stack)
+                elif (elemen[1] == ''):
+                        if (elemen[0] == 'e'): 
+                            stack.pop()
+                            # print("ini stack",stack)
         
-    #             flag = True
-    #     if (flag == False):
-    #         exit("Syntax Error")
+                flag = True
+        if (flag == False):
+            exit("Syntax Error")
 
-    # for i in accepting_state:
-    #     if (state == i):
-    #         exit("Accepted")
+    for i in accepting_state:
+        if (state == i):
+            exit("Accepted")
             
-    # exit("Syntax Error")  
+    exit("Syntax Error")  
 
 else:
     print("Usage: python main.py pda.txt \"[nama_file].html\"")

@@ -1,4 +1,4 @@
-START HTML HEAD XHEAD BODY XBODY HXREL BXREL XSRC TYPE METHOD FINAL
+START HTML HEAD XHEAD BODY XBODY HXREL BXREL XSRC FINAL
 html /html $ id class style / head /head body /body title /title link href script src h1 /h1 h2 /h2 h3 /h3 h4 /h4 h5 /h5 h6 /h6 p /p br em /em b /b abbr /abbr strong /strong small /small hr div /div a /a img alt type button submit reset /button form action method get post /form input text password email number checkbox table /table tr /tr td /td th /th
 Z0 <html> <head> <body> <title> <link> <script> <h1> <h2> <h3> <h4> <h5> <h6> <p> <br> <em> <b> <abbr> <strong> <small> <hr> <div> <a> <img> <button> <form> <input> <table> <tr> <td> <th>
 START
@@ -327,10 +327,9 @@ BODY style="" <img> BODY <img>
 BODY / <img> BODY e
 BODY button <body> BODY <button><body>
 BODY button <div> BODY <button><div>
-BODY type="" <button> TYPE <button>
-TYPE submit <button> BODY <button>
-TYPE reset <button> BODY <button>
-TYPE button <button> BODY <button>
+BODY type="submit" <button> BODY <button>
+BODY type="reset" <button> BODY <button>
+BODY type="button" <button> BODY <button>
 BODY id="" <button> BODY <button>
 BODY class="" <button> BODY <button>
 BODY style="" <button> BODY <button>
@@ -342,9 +341,8 @@ BODY /button <button> BODY e
 BODY form <body> BODY <form><body>
 BODY form <div> BODY <form><div>
 BODY action="" <form> BODY <form>
-BODY method="" <form> METHOD <form>
-METHOD get <form> BODY <form>
-METHOD post <form> BODY <form>
+BODY method="GET" <form> BODY <form>
+BODY method="POST" <form> BODY <form>
 BODY id="" <form> BODY <form>
 BODY class="" <form> BODY <form>
 BODY style="" <form> BODY <form>
@@ -355,12 +353,11 @@ BODY $ <form> BODY <form>
 BODY /form <form> BODY e
 BODY input <body> BODY <input><body>
 BODY input <div> BODY <input><div>
-BODY type="" <input> TYPE <input>
-TYPE text <input> BODY <input>
-TYPE password <input> BODY <input>
-TYPE email <input> BODY <input>
-TYPE number <input> BODY <input>
-TYPE checkbox <input> BODY <input>
+BODY type="text" <input> BODY <input>
+BODY type="password" <input> BODY <input>
+BODY type="email" <input> BODY <input>
+BODY type="number" <input> BODY <input>
+BODY type="checkbox" <input> BODY <input>
 BODY id="" <input> BODY <input>
 BODY class="" <input> BODY <input>
 BODY style="" <input> BODY <input>
