@@ -44,6 +44,7 @@ def check_tag(file_html):
                         tag_name = tag_content.split()[0]
                         tag_container.append(tag_name)
 
+                        attributes_list = []
                         # Process attributes
                         if " " in tag_content:
                             attributes = tag_content.split(" ", 1)[1]
@@ -85,3 +86,6 @@ def check_tag(file_html):
     return tag_container_filtered
 
 # ['html', 'head', '!--', '$', '--', 'title', '$', '/title', 'link', 'rel=""', 'href=""', '/', 'script', 'src=""', '$', '/script', '/head', 'body', 'em', '$', '/em', 'hr', '/', 'strong', 'p', '$', '/p', 'p', '$', '/p', 'b', 'p', '$', '/p', 'p', '$', '/p', '/b', '/strong', 'h1', 'abbr', 'title=""', '$', '/abbr', '/h1', 'h2', 'p', '$', '/p', '/h2', 'h3', 'p', '$', '/p', '/h3', 'h4', 'p', '$', '/p', '/h4', 'h5', 'p', '$', '/p', '/h5', 'h6', 'p', '$', '/p', '/h6', 'p', '$', '/p', '/body', '/html']
+
+isiHTML = check_tag('index.html')
+print(isiHTML)
