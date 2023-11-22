@@ -49,14 +49,19 @@ def check_tag(file_html):
                             attributes = tag_content.split(" ", 1)[1]
                             attributes_list = attributes.split()
 
-                            for i, attr in enumerate(attributes_list):
-                                if "=" in attr:
-                                    attr_name, attr_value = attr.split("=", 1)
-                                    if attr_name.lower() != "method" and '"' in attr_value:
-                                        attr_value = '""'
-                                    attributes_list[i] = f"{attr_name}={attr_value}"
+                        for i, attr in enumerate(attributes_list):
+                            if "=" in attr:
+                                attr_name, attr_value = attr.split("=", 1)
+                                if attr_name.lower() != "method" and '"' in attr_value:
+                                    attr_value = '""'
+                                elif attr_name.lower() == "method" and attr_value.lower() != "get":
+                                    attr_value = '"POST"'
+                                elif attr_name.lower() == "method" and attr_value.lower() != "post":
+                                    attr_value = '"GET"'
 
-                            tag_container.extend(attributes_list)
+                                attributes_list[i] = f"{attr_name}={attr_value}"
+
+                        tag_container.extend(attributes_list)
 
 
     tag_container_filtered = []
