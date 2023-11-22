@@ -26,8 +26,6 @@ with open(file_html) as read_html:
             if word[i] == "<":
                 start_index = i
                 if end_index != -1:
-                    if word[end_index + 1:start_index] != "":
-                        tag_container.append(">")
                     tag_container.append("$")
 
             if word[i] == ">":
