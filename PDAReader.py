@@ -32,7 +32,7 @@ for i in range( panjang_baris):
 
 
 
-isiHTML = ['html', 'head', 'title', '/title', '/head','body','/body', '/html']
+isiHTML = ['html', '!--', '--', 'head', 'title', 'id=""', '/title', '/head','body', 'input', 'type=""', 'text','/','/body', '/html']
 #print(transition_function)
 
 state = start_state
@@ -78,14 +78,14 @@ for masukkan in isiHTML:
             elemen = parsingStack(addToStack(transisi))
             # print(transisi)
             # print(elemen)
-            print(elemen)
+            #print(elemen)
             if (elemen[1] != ''):
                     stack.append(elemen[0])
-                    print("ini stack",stack)
+                    # print("ini stack",stack)
             elif (elemen[1] == ''):
                     if (elemen[0] == 'e'): 
                         stack.pop()
-                        print("ini stack",stack)
+                        # print("ini stack",stack)
     
             flag = True
     if (flag == False):
