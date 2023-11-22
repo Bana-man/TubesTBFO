@@ -45,7 +45,7 @@ BXREL style <link> BXREL <link>
 BXREL rel <link> BODY <link>
 BODY href <link> BODY <link>
 BODY id <link> BODY <link>
-BODY class <link> BODY <link>
+BODY class <link> BODY <link>S
 BODY style <link> BODY <link>
 BODY / <link> BODY e
 HEAD script <head> HEAD <script><head>

@@ -28,12 +28,25 @@ def listToString(list):
 
 #def parsting isi teks
 def parsingStack(list):
+    list_hasil = []
     hasil = ""
+    count = 0
+    i = 0
     for elemen in list:
-        hasil += elemen
-        if elemen == ">":
+        if (elemen == 'e' and i == 0):
+            list_hasil.append('e')
             break
-    return hasil
+        hasil += elemen
+        if elemen == ">" and count == 0:
+            count += 1
+            list_hasil.append(hasil)
+            hasil = ""    
+        if (count == 2):
+            break
+        i += 1
+    list_hasil.append(hasil)
+
+    return list_hasil
 
 
 

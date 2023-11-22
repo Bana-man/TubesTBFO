@@ -32,7 +32,7 @@ for i in range( panjang_baris):
 
 
 
-isiHTML = ['html', 'head', 'img', 'src', '/', 'title', '/title', '/head','body','/body', '/html']
+isiHTML = ['html', 'head', 'title', '/title', '/head','body','/body', '/html']
 #print(transition_function)
 
 state = start_state
@@ -54,8 +54,21 @@ accepting = accepting_state
 # print(listToString(state))
 # print(stack)
 # print(accepting)
+# print(transition_function)
+# print(addToStack(transition_function[0]))
+# print(parsingStack(addToStack(transition_function[1])))
+
+# arr = parsingStack(addToStack(transition_function[0]))
+# print(arr[0])
+# print(arr[1])
+# if (arr[1] != ''):
+#     print("benar")
+# else:
+#     print("salah")
 
 
+# print(len(parsingStack(addToStack(transition_function[0]))))
+# print("ini stack",stack)
 for masukkan in isiHTML:
     flag = False
     for transisi in transition_function:
@@ -63,12 +76,18 @@ for masukkan in isiHTML:
         if (listToString(state) == currentState(transisi) and stack[-1] == topFromStack(transisi) and masukkan == alphabetInput(transisi)):
             state = nextState(transisi)
             elemen = parsingStack(addToStack(transisi))
-            if (elemen == 'e'): 
-                stack.pop()
-            elif (elemen != stack[-1]):
-                stack.append(elemen)
+            # print(transisi)
+            # print(elemen)
+            print(elemen)
+            if (elemen[1] != ''):
+                    stack.append(elemen[0])
+                    print("ini stack",stack)
+            elif (elemen[1] == ''):
+                    if (elemen[0] == 'e'): 
+                        stack.pop()
+                        print("ini stack",stack)
+    
             flag = True
-    print(stack)
     if (flag == False):
         exit("Syntax Error")
 
