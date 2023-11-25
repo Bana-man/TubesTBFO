@@ -7,12 +7,8 @@ class bcolors:
     elmt = '\033[33m'     # tags/attributes yellow
     endc = '\033[0m'      # end color
 
-# Function to check if a tag is in the tag_list
-def check_tag(file_html):
-    # List of HTML tags
-    tag_attribute_list = ["html", "head", "body", "title", "link", "script", "h1", "h2", "h3", "h4", "h5", "h6", "p", 
-                "br", "em", "b", "abbr", "strong", "small", "hr", "div", "a", "img", "button", "form", "input",
-                "ol", "table", "tr", "td", "th", "rel", "href", "src", "alt", "type", "action", "type", "method"]
+if sys.argv[0] == "main.py" and sys.argv[1] == "pda.txt":
+    file_html = input("Masukkan nama file HTML: ")
 
     # List tags + attributes
     tag_container = []
@@ -23,7 +19,7 @@ def check_tag(file_html):
     # Flag untuk comment
     in_comment = False
 
-    with open(file_html) as read_html:
+    with open(file_html, encoding="utf-8") as read_html:
         for line in read_html:
             word = line.strip()
             end_index = -1
@@ -68,17 +64,47 @@ def check_tag(file_html):
                             for i, attr in enumerate(attributes_list):
                                 if "=" in attr:
                                     attr_name, attr_value = attr.split("=", 1)
-                                    if attr_name.lower() != "method" and '"' in attr_value:
-                                        attr_value = '""'
-                                    elif attr_name.lower() == "method" and attr_value.lower() != "get":
-                                        attr_value = '"POST"'
-                                    elif attr_name.lower() == "method" and attr_value.lower() != "post":
-                                        attr_value = '"GET"'
+                                    attr_value = attr_value.replace(">","")
+                                    tag_name = tag_name.replace("<","")
 
+                                    if attr_name.lower() not in ["type", "method"]:
+                                        attr_value = '""'
+                                    else:
+                                        if tag_name == "button" and attr_name == "type":
+                                            if "submit" in attr_value.lower():
+                                                attr_value = '"submit"'
+                                            elif "reset" in attr_value.lower():
+                                                attr_value = '"reset"'
+                                            elif "button" in attr_value.lower():
+                                                attr_value = '"button"'
+                                            elif attr_value.lower() not in ["submit", "reset", "button"]:
+                                                attr_value = '""'
+
+                                        if tag_name == "input" and attr_name == "type":
+                                            if "text" in attr_value.lower():
+                                                attr_value = '"text"'
+                                            elif "password" in attr_value.lower():
+                                                attr_value = '"password"'
+                                            elif "email" in attr_value.lower():
+                                                attr_value = '"email"'
+                                            elif "number" in attr_value.lower():
+                                                attr_value = '"number"'
+                                            elif "checkbox" in attr_value.lower():
+                                                attr_value = '"checkbox"'
+                                            elif attr_value.lower() not in ["text", "password", "email", "number", "checkbox"]:
+                                                attr_value = '""'
+                                        
+                                        if attr_name == "method":
+                                            if "get" in attr_value.lower():
+                                                attr_value = '"GET"'
+                                            elif "post" in attr_value.lower():
+                                                attr_value = '"POST"'
+                                            elif attr_value.lower() not in ["get", "post"]:
+                                                attr_value = '""'
+                                    
                                     attributes_list[i] = f"{attr_name}={attr_value}"
 
                             tag_container.extend(attributes_list)
-
 
     tag_container_filtered = []
 
@@ -89,28 +115,20 @@ def check_tag(file_html):
             tag_container_filtered.append(tags[1:])
         elif tags.startswith("/"):
             tag_container_filtered.append("/")
-        elif tags.endswith(">") and tags[:-1] not in tag_attribute_list:
-            continue
         elif tags.endswith(">"):
             tag_container_filtered.append(tags[:-1])
         else:
             tag_container_filtered.append(tags)
-        
-    return tag_container_filtered
 
-if len(sys.argv) >= 2:
-    input_file = sys.argv[2]
-
-    pda = open("PDA.txt")
-    state = ((pda.readline()).rstrip()).split()
-    input_simbol = ((pda.readline()).rstrip()).split()
-    stack_simbol = ((pda.readline()).rstrip()).split()
-    start_state = ((pda.readline()).rstrip()).split()
-    start_stack = ((pda.readline()).rstrip()).split()
-    accepting_state =  ((pda.readline()).rstrip()).split()
-    kondisi = ((pda.readline()).rstrip()).split()
-    pda.close()
-
+        pda = open("PDA.txt")
+        state = ((pda.readline()).rstrip()).split()
+        input_simbol = ((pda.readline()).rstrip()).split()
+        stack_simbol = ((pda.readline()).rstrip()).split()
+        start_state = ((pda.readline()).rstrip()).split()
+        start_stack = ((pda.readline()).rstrip()).split()
+        accepting_state =  ((pda.readline()).rstrip()).split()
+        kondisi = ((pda.readline()).rstrip()).split()
+        pda.close()
 
     # Read fungsi transisi
     pda = open("PDA.txt")
@@ -124,7 +142,7 @@ if len(sys.argv) >= 2:
         if i >= 7:        
             transition_function.append(temp[i].rstrip().split())
 
-    isiHTML = check_tag(input_file)
+    isiHTML = tag_container_filtered
     print(f"{bcolors.elmt}{isiHTML}{bcolors.endc}")
 
     state = start_state
@@ -157,4 +175,4 @@ if len(sys.argv) >= 2:
     exit(f"{bcolors.fail}Syntax Error{bcolors.endc}")
 
 else:
-    print(f"{bcolors.fail}Usage: python main.py pda.txt \"[nama_file].html\"{bcolors.endc}")
+    print(f"{bcolors.fail}Usage: python main.py pda.txt{bcolors.endc}")
