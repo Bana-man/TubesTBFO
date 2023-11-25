@@ -300,6 +300,7 @@ BODY div <div> BODY <div><div>
 BODY id="" <div> BODY <div>
 BODY class="" <div> BODY <div>
 BODY style="" <div> BODY <div>
+BODY $ <div> BODY <div>
 BODY !-- <div> BODY <comment><div>
 BODY $ <comment> BODY <comment>
 BODY -- <comment> BODY e
