@@ -16,6 +16,9 @@ HTML !-- <html> HTML <comment><html>
 HTML $ <comment> HTML <comment>
 HTML -- <comment> HTML e
 XBODY /html <html> FINAL e
+FINAL !-- Z0 FINAL <comment>Z0
+FINAL $ <comment> FINAL <comment>
+FINAL -- <comment> FINAL e
 HTML head <html> HEAD <head><html>
 HEAD id="" <head> HEAD <head>
 HEAD class="" <head> HEAD <head>
@@ -36,7 +39,7 @@ BODY !-- <body> BODY <comment><body>
 BODY $ <comment> BODY <comment>
 BODY -- <comment> BODY e
 BODY /body <body> XBODY e
-XBODY !-- Z0 XBODY <comment>Z0
+XBODY !-- <html> XBODY <comment><html>
 XBODY $ <comment> XBODY <comment>
 XBODY -- <comment> XBODY e
 HEAD title <head> HEAD <title><head>
