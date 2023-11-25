@@ -1,6 +1,12 @@
 import sys
 from tasukete import *
 
+class bcolors:
+    fail = '\033[91m'     # fail bright red
+    success = '\033[92m'  # success bright green
+    elmt = '\033[33m'     # tags/attributes yellow
+    endc = '\033[0m'      # end color
+
 # Function to check if a tag is in the tag_list
 def check_tag(file_html):
     # List of HTML tags
@@ -94,8 +100,6 @@ def check_tag(file_html):
 
 if len(sys.argv) >= 2:
     input_file = sys.argv[2]
-    # print(input_file)
-    # print("Nama file input:", input_file)
 
     pda = open("PDA.txt")
     state = ((pda.readline()).rstrip()).split()
@@ -121,7 +125,7 @@ if len(sys.argv) >= 2:
             transition_function.append(temp[i].rstrip().split())
 
     isiHTML = check_tag(input_file)
-    print(isiHTML)
+    print(f"{bcolors.elmt}{isiHTML}{bcolors.endc}")
 
     state = start_state
     stack = start_stack
@@ -130,31 +134,27 @@ if len(sys.argv) >= 2:
     for masukkan in isiHTML:
         flag = False
         for transisi in transition_function:
-            # print(transisi)
             if (listToString(state) == currentState(transisi) and stack[-1] == topFromStack(transisi) and masukkan == alphabetInput(transisi)):
                 state = nextState(transisi)
                 elemen = parsingStack(addToStack(transisi))
-                # print(transisi)
-                # print(elemen)
-                # print(elemen)
+
                 if (elemen[1] != ''):
                         stack.append(elemen[0])
-                        # print("ini stack",stack)
                 elif (elemen[1] == ''):
                         if (elemen[0] == 'e'): 
                             stack.pop()
-                            # print("ini stack",stack)
         
                 flag = True
 
         if (flag == False):
-            exit("Syntax Error")
+            exit(f"{bcolors.fail}Syntax Error{bcolors.endc}")
+
 
     for i in accepting_state:
         if (state == i):
-            exit("Accepted")
+            exit(f"{bcolors.success}Accepted{bcolors.endc}")
             
-    exit("Syntax Error")  
+    exit(f"{bcolors.fail}Syntax Error{bcolors.endc}")
 
 else:
-    print("Usage: python main.py pda.txt \"[nama_file].html\"")
+    print(f"{bcolors.fail}Usage: python main.py pda.txt \"[nama_file].html\"{bcolors.endc}")
