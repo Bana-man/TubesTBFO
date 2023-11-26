@@ -156,10 +156,10 @@ if len(sys.argv) == 3:
             print(f"{bcolors.fail}File {sys.argv[2]} tidak ditemukan{bcolors.endc}\n")
             exit(f"{bcolors.fail}Usage: python main.py PDA.txt \"[nama_file].html\"{bcolors.endc}")
         else:
-            input_file = sys.argv[2]
-            isiHTML = check_tag(input_file)
+            isiHTML = check_tag(path)
 
-            pda = open("PDA.txt")
+            pathPDA = os.getcwd() + "\\" + sys.argv[1]
+            pda = open(pathPDA)
             state = ((pda.readline()).rstrip()).split()
             input_simbol = ((pda.readline()).rstrip()).split()
             stack_simbol = ((pda.readline()).rstrip()).split()
@@ -171,7 +171,7 @@ if len(sys.argv) == 3:
 
 
             # Read fungsi transisi
-            pda = open("PDA.txt")
+            pda = open(pathPDA)
             temp = pda.readlines()
             pda.close()
 
