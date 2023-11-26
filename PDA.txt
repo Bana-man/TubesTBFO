@@ -5,6 +5,7 @@ START
 Z0
 FINAL
 F
+BODY div <div> BODY <div><div>
 START !-- Z0 START <comment>Z0
 START $ <comment> START <comment>
 START -- <comment> START e
@@ -266,7 +267,6 @@ BODY class="" <hr> BODY <hr>
 BODY style="" <hr> BODY <hr>
 BODY / <hr> BODY e
 BODY div <body> BODY <div><body>
-BODY div <div> BODY <div><div>
 BODY id="" <div> BODY <div>
 BODY class="" <div> BODY <div>
 BODY style="" <div> BODY <div>
